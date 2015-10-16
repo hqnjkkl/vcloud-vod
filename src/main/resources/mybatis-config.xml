@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties resource="ddb.properties" />
+	<settings>
+		<setting name="cacheEnabled" value="false" />
+	</settings>
+
+		
+	<typeAliases>
+		<typeAlias type="com.netease.vcloud.dao.domain.Channel" alias="Channel"/>
+        <typeAlias type="com.netease.vcloud.dao.domain.Resource" alias="Resource"/>
+		<typeAlias type="com.netease.vcloud.dao.domain.User" alias="User" />
+		<typeAlias type="com.netease.vcloud.dao.domain.AuthToken"
+			alias="AuthToken" />
+		<typeAlias type="com.netease.vcloud.dao.domain.ASKey" alias="ASKey" />
+	</typeAliases>
+
+
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="UNPOOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+	</environments>
+
+	<mappers>
+		<mapper resource="com/netease/vcloud/dao/mapper/ChannelMapper.xml"/>
+		<mapper resource="com/netease/vcloud/dao/mapper/ResourceMapper.xml"/>
+		<mapper resource="com/netease/vcloud/dao/mapper/UserMapper.xml" />
+		<mapper resource="com/netease/vcloud/dao/mapper/AuthTokenMapper.xml" />
+		<mapper resource="com/netease/vcloud/dao/mapper/ASKeyMapper.xml" />
+	</mappers>
+
+</configuration>

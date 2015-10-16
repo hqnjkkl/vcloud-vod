@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.netease.vcloud.dao.domain.ASKey">
+
+	<select id="getSecretKey" parameterType="ASKey" resultType="String">
+	    <![CDATA[
+	    	select secretKey from vcloud_auth where uid = #{uid} and accessKey = #{accessKey}
+		]]>
+	</select>
+
+	<select id="getSecretKeys" parameterType="long" resultType="ASKey">
+	    <![CDATA[
+	    	select * from vcloud_auth where uid = #{uid}
+		]]>
+	</select>
+
+	<insert id="addAuth" parameterType="ASKey">
+		<![CDATA[
+			insert into vcloud_auth(uid, accessKey, secretKey) values(#{uid}, #{accessKey}, #{secretKey})
+		]]>
+	</insert>
+
+	<delete id="deleteAuth" parameterType="ASKey">
+		<![CDATA[
+			delete from vcloud_auth where uid = #{uid} and accessKey = #{accessKey}
+		]]>
+	</delete>
+
+</mapper>

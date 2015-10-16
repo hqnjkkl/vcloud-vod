@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.netease.vcloud.storage.dao.ITokenDao">
+
+	<select id="selectUserByToken" parameterType="String"
+		resultType="AuthToken">
+	    <![CDATA[
+	    	select * from vcloud_token where token = #{token}
+		]]>
+	</select>
+
+	<insert id="addToken" parameterType="AuthToken">
+		<![CDATA[
+			insert into vcloud_token(uid, token) values(#{uid}, #{token}); 
+		]]>
+	</insert>
+
+</mapper>

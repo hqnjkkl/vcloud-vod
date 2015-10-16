@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.netease.vcloud.dao.domain.Channel">
+ 
+	<insert id="addChannel" parameterType="Channel">
+	    <![CDATA[
+			insert into vcloud_channel ( cid, uid, name, status, type, ctime ) 
+			values ( #{cid}, #{uid}, #{name}, #{status}, #{type}, #{ctime} );
+		]]>
+	</insert>
+	
+	<update id="updateChannel" parameterType="Channel">
+		<![CDATA[
+			update vcloud_channel set
+			name = #{name},
+			type = #{type}
+			where cid = #{cid}
+			and uid = #{uid};
+		]]>
+	</update>
+	
+	<delete id="deleteChannel" parameterType="Map">
+		<![CDATA[
+			delete from vcloud_channel 
+			where cid = #{cid}
+			and uid = #{uid};
+		]]>
+	</delete>
+	
+	<select id="getChannelListDESC" parameterType="Map" resultType="Channel">
+		<![CDATA[
+			select * from vcloud_channel where uid = #{uid}
+			order by ${ofield} 
+			desc
+			limit #{records}
+			offset #{offset};
+		]]>
+	</select>
+	
+	<select id="getChannelListASC" parameterType="Map" resultType="Channel">
+		<![CDATA[
+			select * from vcloud_channel where uid = #{uid}
+			order by ${ofield} 
+			asc
+			limit #{records}
+			offset #{offset};
+		]]>
+	</select>
+ 
+	<select id="getChannelStatsByName" parameterType="Map" resultType="Channel">
+		<![CDATA[
+			select * from vcloud_channel 
+			where name = #{name}
+			and uid = #{uid};
+		]]>
+	</select>
+	
+	<select id="getChannelStatsById" parameterType="Map" resultType="Channel">
+		<![CDATA[
+			select * from vcloud_channel 
+			where cid = #{cid}
+			and uid = #{uid};
+		]]>
+	</select>
+	
+</mapper>

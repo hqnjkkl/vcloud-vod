@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>server configuration</comment>
+<entry key="CacheEnabled">true</entry>
+<entry key="UseTimeline">false</entry>
+<entry key="MemcachedServerList">192.168.164.201:12345</entry>
+<entry key="MonitorIP">10.120.104.161</entry>
+<entry key="MonitorPort">5222</entry>
+<entry key="RedisProxyForPresence">10.165.124.48:6379</entry>
+<entry key="push_prefix">rtmp://p.video.cloud.163.com/live</entry>
+<entry key="http_pull_prefix">http://v.video.cloud.163.com/live</entry>
+<entry key="hls_pull_prefix">hls://v.video.cloud.163.com/live</entry>
+<entry key="rtmp_pull_prefix">rtmp://v.video.cloud.163.com/live</entry>
+<entry key="cdn_secretkey">5bd189a8d1f64b44acea5487472b1259</entry>
+<entry key="cdn_validity">7200000</entry>
+<entry key="accessKey">64ba2fce06dd4890b90f3853185a7c27</entry>
+<entry key="secretKey">063f3b706aa84b1eb4ac03640a2e674f</entry>
+<entry key="bucketName">vcloud</entry>
+<entry key=" nosServerUrl">http://nos.netease.com</entry>
+</properties>
+

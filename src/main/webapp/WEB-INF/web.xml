@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+	<listener>
+		<description>configuration</description>
+		<listener-class>com.netease.vcloud.api.listener.AdminConfigurationListener</listener-class>
+	</listener>
+
+	<!-- Character Encoding Filter -->
+	<filter>
+		<filter-name>Set Character Encoding</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>Set Character Encoding</filter-name>
+		<servlet-name>mvc-dispatcher</servlet-name>
+	</filter-mapping>
+
+
+	<!-- Processes application requests -->
+	<!-- <filter> <filter-name>MethodFilter</filter-name> <filter-class>com.chinatelecom.yiliao.filter.MethodFilter</filter-class> 
+		</filter> <filter-mapping> <filter-name>MethodFilter</filter-name> <url-pattern>/*</url-pattern> 
+		</filter-mapping> -->
+	<servlet>
+		<servlet-name>webApiServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:servlet-context.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>webApiServlet</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+</web-app>

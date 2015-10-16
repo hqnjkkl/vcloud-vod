@@ -14,17 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
+
 import com.netease.vcloud.CommonService;
 import com.netease.vcloud.common.AdminCommon;
 import com.netease.vcloud.model.Msg;
-import com.netease.vcloud.model.NewChannel;
-import com.netease.vcloud.storage.dao.domain.ChannelType;
-import com.netease.vcloud.storage.dao.domain.DBRelatedParams;
-import com.netease.vcloud.utils.MD5Utils;
 import com.netease.vcloud.vod.api.util.AdminUtil;
-import com.netease.vcloud.vod.service.ChannelService;
 import com.netease.vcloud.vod.service.UserService;
 
 

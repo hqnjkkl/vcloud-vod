@@ -6,13 +6,11 @@
         <groupId>com.netease.vcloud</groupId>  
         <artifactId>vcloud-parent</artifactId>  
         <version>0.1-SNAPSHOT</version>  
-        <relativePath>../vcloud-parent/pom.xml</relativePath>
+        <relativePath>../VideoCloud</relativePath>
     </parent>
 	
-	<groupId>com.netease.vcloud.vod</groupId>
 	<artifactId>vcloud-vod</artifactId>
 	<packaging>war</packaging>
-	<version>0.1-SNAPSHOT</version>
 	<name>vcloud-vod</name>
 	<url>http://maven.apache.org</url>	
  
